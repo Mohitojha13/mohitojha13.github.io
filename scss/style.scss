@@ -1986,3 +1986,62 @@ textarea.form-control {
     stroke-dashoffset: -136px;
   }
 }
+/* ---------- RESPONSIVE ABOUT SECTION ---------- */
+
+#about-section .title {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+#about-section .name {
+    font-size: 26px;
+    font-weight: 700;
+    color: #f5d78b;
+}
+
+#about-section .sub-heading {
+    margin-top: 25px;
+    font-weight: 600;
+    color: #ffbd39;
+}
+
+.about-info-list li {
+    margin-bottom: 8px;
+}
+
+.progress {
+    height: 8px;
+    background: #e4e4e4;
+    border-radius: 5px;
+}
+.progress-bar {
+    background: #ffbd39;
+}
+
+/* ----------- Mobile ---------- */
+@media (max-width: 768px) {
+    #about-section .title {
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    #about-section .name {
+        text-align: center;
+    }
+
+    .about-info {
+        text-align: center;
+    }
+
+    .about-info-list li {
+        text-align: left;
+    }
+}
+
+/* ----------- Tablet (768–991 px) ---------- */
+@media (max-width: 991px) {
+    #about-section .title {
+        font-size: 28px;
+    }
+}
