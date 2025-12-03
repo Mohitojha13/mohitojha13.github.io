@@ -42,6 +42,100 @@
 .about-mf .about-img img {
   margin-left: 10px;
 }
+.about-mf .about-img img {
+  width: 120px;       /* Laptop size */
+  max-width: 100%;    /* Mobile me responsive */
+  height: auto;
+  margin-left: 10px;
+  border-radius: 10px; /* optional */
+}
+
+/* Mobile screens ke liye special adjustment */
+@media (max-width: 768px) {
+  .about-mf .about-img img {
+    width: 90px;     /* Mobile size */
+    margin-left: 0;
+  }
+}
+/* ===========================
+   ABOUT SECTION RESPONSIVE FIX
+=========================== */
+
+/* Image Responsive */
+.about-mf .about-img img {
+  width: 130px;      
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-left: 10px;
+}
+
+/* About Section Layout Fix */
+.about-mf .overlay {
+  padding: 20px;
+}
+
+/* Text & Skills Proper Alignment */
+.about-info p,
+.skill-mf {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ===========================
+   MOBILE RESPONSIVE
+=========================== */
+@media (max-width: 768px) {
+
+  /* About section full width */
+  #about-section .col-md-6,
+  #about-section .col-lg-5,
+  #about-section .col-lg-7 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  /* Image center alignment */
+  .about-mf .about-img img {
+    width: 100px;      
+    margin: 0 auto;
+    display: block;
+  }
+
+  /* About text spacing */
+  .about-info {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  /* Skills bar full width */
+  .skill-mf .progress {
+    width: 100%;
+  }
+
+  /* Reduce padding */
+  .about-mf .box-shadow-full {
+    padding: 2rem 1rem;
+  }
+}
+
+/* ===========================
+   SMALL MOBILE (Max 480px)
+=========================== */
+@media (max-width: 480px) {
+  .about-mf .about-img img {
+    width: 80px;
+  }
+
+  .about-info p {
+    font-size: 14px;
+  }
+
+  .skill-mf span {
+    font-size: 14px;
+  }
+}
+
 
 
 .skill-mf .progress {
@@ -108,6 +202,24 @@
 .zoom-effect:hover {
   transform: scale(1.1);
 }
+body {
+    filter: brightness(1.05) contrast(1);
+}
+/*  
+Brightness Guide (Reference):
+
+1.00 = Normal (default)
+1.10 = Thoda bright
+1.15 = Medium bright
+1.20 = Strong brightness
+1.30 = Bahut zyada bright
+0.90 = Thoda dark
+0.80 = Dark mode jaisa
+
+Change only brightness() value below ⬇
+*/
+
+
 
 
 </style>
@@ -192,7 +304,7 @@
 			            <!-- <h2>A Senior Data Analyst</h2> -->
 						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
 						<!-- <br> -->
-			            <p><a href="https://www.linkedin.com/in/mohit-ojha-data-analytics/" class="btn btn-primary py-3 px-4">Linkedin</a> 
+			            <p><a href="https://www.linkedin.com/in/mohit-ojha-data-analyst" class="btn btn-primary py-3 px-4">Linkedin</a> 
 							<a href="https://drive.google.com/file/d/1fLTFVCEntbNXqzZ6iNVxC-mXgRIYGqWh/view?usp=drive_link" class="btn btn-white btn-outline-white py-3 px-4">Download Cv</a></p>
 						</div>
 		          </div>
@@ -214,36 +326,29 @@
 							<div class="overlay">
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
-  <div class="about-img" style="margin-top:105px;">
-    <img src="images/logo.jpeg" class="img-fluid rounded b-shadow-a" alt="">
-  </div>
-</div>
+									  <div class="about-img">
+										<img src="images/logo.jpeg" class="img-fluid rounded b-shadow-a" alt="">
+									  </div>
+									</div>
 									<!-- Details next to profile image -->
-									<div class="col-sm-6 col-md-7" style="margin-top:100px;">
-  <div class="about-info">
+									<div class="col-sm-6 col-md-7">
+									  <div class="about-info">
 										<p style="font-size:25px; font-weight:700; color:#dac79e; margin-bottom:10px;">Mohit Kumar Ojha</p>
-										<p><span class="title-s">Job Role : </span> <span>Data Analyst , MIS Executive , Business Analyst , MIS Analyst & Analyst Role •</span></p>
-										<h3 style="font-weight:400; color:#f0e9d9; margin-bottom:10px; margin-top:50px; margin-left: -210px;">Experience : </h3>
-										<p style="margin-left: -210px;">MIS Executive — [Smile Foundation] <br>
-											 Sep 2025 - present</p>
-										<p style="margin-left: -210px;">MIS Executive — [Greet-India (Gifts) Foundation] <br>
-											Apr 2024 - Aug 2025 .</span></p>
-										<p style="margin-left: -210px;">Data Analyst (Intern) — [Unified Mentor] <br>
-											Sep 2024 - Oct 2024.</span></p>
-										<li class="d-flex">
+										<p><span class="title-s">Data Analyst & MIS Executive</span></p>
+										<p><span class="title-s">Experience : </span> <span>MIS Executive with 1 Year 6 Months Experience in data reporting, analysis, and dashboard management.</span></p>
 									  </div>
 									</div>
 								  </div>
 
 								<div class="skill-mf">
 									<h4 class="mb-4">Skills : </h4>
-									<span>Advanced Excel</span> <span class="pull-right">(95%)</span>
+									<span>Excel / Sheets</span> <span class="pull-right">(95%)</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
 											aria-valuemax="100"></div>
 									</div>
 									
-									<span>Power BI</span> <span class="pull-right">(90%)</span>
+									<span>BI Tools</span> <span class="pull-right">(90%)</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
 											aria-valuemax="100"></div>
@@ -255,21 +360,15 @@
 											aria-valuemax="100"></div>
 									</div>
 									
-									<span>Python (NumPy, Pandas, Matplotlib, Seaborn)</span> <span class="pull-right">(80%)</span>
+									<span>Python (Libraries)</span> <span class="pull-right">(80%)</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="90" aria-valuemin="0"
 											aria-valuemax="100"></div>
 									</div>
 									
-									<span>Google Sheets</span> <span class="pull-right">(92%)</span>
+									<span>Data Analysis</span> <span class="pull-right">(92%)</span>
 									<div class="progress">
 										<div class="progress-bar" role="progressbar" style="width: 92%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
-											
-									</div>
-									<span>Google Looker Studio</span> <span class="pull-right">(90%)</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
 											aria-valuemax="100"></div>
 											
 									</div>
@@ -290,20 +389,17 @@
 					</div>
 					
 					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
-						<div class="row pb-3" style="text-align:left !important;">
+						<div class="row justify-content-start pb-3">
 							<div class="col-md-12 heading-section ftco-animate">
 								
 								
-								<h2 class="mb-4" style="margin-left: -530px !important ;">About Me : -</h2>
+								<h2 class="mb-4">About Me</h2>
 								
-								<p>Welcome to my portfolio! My name is Mohit Kumar Ojha, and I am from Ara, Bihar. I graduated from Veer Kunwar Singh University, Ara (Bihar), in 2024. 
-									After completing my graduation, I decided to pursue my career in the field of Data Analytics, driven by my strong interest in data-driven insights and business intelligence.</p>
-								<p>I am currently working as an MIS Executive at Smile Foundation (September 2025 – Present), where I manage data reporting, maintain dashboards, ensure data accuracy, and support operational decision-making through meaningful insights. 
-									Prior to this, I gained over 1 year and 4 months of experience as a Computer Trainer & MIS Executive, which strengthened my analytical, technical, and reporting skills.</p>
-								<p>I have expertise in a wide range of tools, technologies, and data sources including Advanced Excel, Python, MySQL, SQL, Power BI, Tableau, Google Looker Studio, Google Sheets, and Google Forms.
-									 I have successfully completed various data analytics projects and also completed a 1-month Data Analyst Internship at Unified Mentor, where I worked on real-time datasets and analytical problem-solving.</p>
-								<p>I am passionate about continuous learning, exploring modern analytical tools, and taking on challenging roles that help organizations make informed and impactful decisions through data.</p>
-								<ul class="about-info mt-4 px-md-0 px-2">
+								<p>Welcome to my portfolio! I’m Mohit Kumar Ojha, a Data Analyst & MIS Executive with strong experience in data reporting, dashboard development, and business intelligence.
+									 I specialize in converting raw data into meaningful insights using tools like Excel, SQL, Power BI, Looker Studio, Tableau, and Python. My focus is on building automated reporting systems, improving data accuracy, and creating interactive dashboards that support smarter and faster decision-making.</p>
+								<p>Currently, I work as an MIS Executive at Smile Foundation, where I manage end-to-end reporting, visualization, and data validation processes. Previously,
+									 I gained hands-on experience as a Computer Trainer & MIS Executive and completed a Data Analyst Internship at Unified Mentor, working with real-time datasets and analytical problem-solving. I’m passionate about continuous learning and using modern analytics tools to help organizations optimize workflows and make data-driven decisions with confidence.</p>
+									<ul class="about-info mt-4 px-md-0 px-2">
 									<li class="d-flex"><span>Profile :</span> <span>Data Analyst, MIS Analyst, MIS Executive & Business Analyst</span></li>
 									<li class="d-flex"><span>Education :</span> <span>Bachelor of Arts (History)</span></li>
 									<li class="d-flex"><span>Tools :</span> <span>Advanced Excel, Power BI, Tableau, Looker Studio, DAX, SQL, Power Query, and Python (NumPy, Pandas, Matplotlib, Seaborn).</span></li>
@@ -773,7 +869,7 @@
           			<span class="icon-map-signs"></span>
           		</div>
           		<h3 class="mb-4">Address</h3>
-	            <p><a href="mailto:info@yoursite.com">Ara , Bihar , India</a></p>
+	            <p><a href="https://maps.google.com/?q=Arrah"> 📍 Ara , Bihar , India</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -816,7 +912,7 @@
 				<br>
 					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
 					  <li class="ftco-animate normal-txt">Find me on  </li>
-					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/mohit-ojha-data-analytics/"><span class="icon-linkedin"></span></a></li>
+					  <li class="ftco-animate"><a href="https://www.linkedin.com/in/mohit-ojha-data-analyst"><span class="icon-linkedin"></span></a></li>
 					  <li class="ftco-animate"><a href="https://www.github.com/Mohitojha13"><span class="icon-github"></span></a></li>
 					  <!-- <li class="ftco-animate"><a href="https://www.instagram.com/Mohitojha013/"><span class="icon-instagram"></span></a></li> -->
 					</ul>
