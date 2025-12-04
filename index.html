@@ -40,102 +40,29 @@
 }
 
 .about-mf .about-img img {
-  margin-left: 10px;
-}
-.about-mf .about-img img {
-  width: 120px;       /* Laptop size */
-  max-width: 100%;    /* Mobile me responsive */
-  height: auto;
-  margin-left: 10px;
-  border-radius: 10px; /* optional */
+    margin-left: 10px;
+    margin-top: 20px !important;  
+    display: block !important;
 }
 
-/* Mobile screens ke liye special adjustment */
-@media (max-width: 768px) {
-  .about-mf .about-img img {
-    width: 90px;     /* Mobile size */
-    margin-left: 0;
-  }
-}
-/* ===========================
-   ABOUT SECTION RESPONSIVE FIX
-=========================== */
-
-/* Image Responsive */
-.about-mf .about-img img {
-  width: 130px;      
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-left: 10px;
+/* Responsive profile image */
+.profile-img {
+    width: 160px;
 }
 
-/* About Section Layout Fix */
-.about-mf .overlay {
-  padding: 20px;
+/* Tablet */
+@media (max-width: 991px) {
+    .profile-img {
+        width: 150px;
+    }
 }
 
-/* Text & Skills Proper Alignment */
-.about-info p,
-.skill-mf {
-  font-size: 15px;
-  line-height: 1.5;
+/* Mobile */
+@media (max-width: 576px) {
+    .profile-img {
+        width: 130px;
+    }
 }
-
-/* ===========================
-   MOBILE RESPONSIVE
-=========================== */
-@media (max-width: 768px) {
-
-  /* About section full width */
-  #about-section .col-md-6,
-  #about-section .col-lg-5,
-  #about-section .col-lg-7 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  /* Image center alignment */
-  .about-mf .about-img img {
-    width: 100px;      
-    margin: 0 auto;
-    display: block;
-  }
-
-  /* About text spacing */
-  .about-info {
-    text-align: center;
-    margin-top: 15px;
-  }
-
-  /* Skills bar full width */
-  .skill-mf .progress {
-    width: 100%;
-  }
-
-  /* Reduce padding */
-  .about-mf .box-shadow-full {
-    padding: 2rem 1rem;
-  }
-}
-
-/* ===========================
-   SMALL MOBILE (Max 480px)
-=========================== */
-@media (max-width: 480px) {
-  .about-mf .about-img img {
-    width: 80px;
-  }
-
-  .about-info p {
-    font-size: 14px;
-  }
-
-  .skill-mf span {
-    font-size: 14px;
-  }
-}
-
 
 
 .skill-mf .progress {
@@ -201,6 +128,11 @@
 
 .zoom-effect:hover {
   transform: scale(1.1);
+}
+/* Add this below */
+.title-s {
+    font-size: 17px;
+    font-weight: 600;
 }
 body {
     filter: brightness(1.05) contrast(1);
@@ -327,13 +259,13 @@ Change only brightness() value below ⬇
 								<div class="row">
 									<div class="col-sm-6 col-md-5">
 									  <div class="about-img">
-										<img src="images/logo.jpeg" class="img-fluid rounded b-shadow-a" alt="">
+										<img src="images/logo.jpeg" class="profile-img img-fluid rounded-circle shadow">
 									  </div>
 									</div>
 									<!-- Details next to profile image -->
 									<div class="col-sm-6 col-md-7">
 									  <div class="about-info">
-										<p style="font-size:25px; font-weight:700; color:#dac79e; margin-bottom:10px;">Mohit Kumar Ojha</p>
+										<p style="font-size:27px; font-weight:700; color:#dac79e; margin-bottom:10px;">Mohit Kumar Ojha</p>
 										<p><span class="title-s">Data Analyst & MIS Executive</span></p>
 										<p><span class="title-s">Experience : </span> <span>MIS Executive with 1 Year 6 Months Experience in data reporting, analysis, and dashboard management.</span></p>
 									  </div>
