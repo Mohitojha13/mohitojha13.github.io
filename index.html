@@ -53,12 +53,12 @@
 
 @media only screen and (max-width: 600px) {
     #about-section .about-img img {
-        width: 330px !important;
-        height: 330px !important;
-        max-width: 330px !important;     /* img-fluid override */
-        max-height: 330px !important;
-        min-width: 330px !important;     /* force fix */
-        min-height: 330px !important;    /* force fix */
+        width: 260px !important;
+        height: 260px !important;
+        max-width: 260px !important;     /* img-fluid override */
+        max-height: 260px !important;
+        min-width: 260px !important;     /* force fix */
+        min-height: 2600px !important;    /* force fix */
         object-fit: cover !important;
         border-radius: 50% !important;
         display: block !important;
@@ -141,7 +141,32 @@
 .skill-mf h4 {
     margin-left: 20px !important;
 }
-	
+/* ===============================
+   ABOUT IMAGE — DESKTOP IMPROVEMENT
+   =============================== */
+@media only screen and (min-width: 992px) {
+
+    /* Image ko thoda bada karna */
+    .about-img img {
+        width: 360px !important;
+        height: 360px !important;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    /* Image container ko thoda niche lana */
+    .img-about {
+        display: flex;
+        align-items: center;    /* vertical alignment fix */
+        justify-content: center;
+        margin-top: 40px;       /* yahan se neeche shift hoga */
+    }
+
+    /* Name, Profile, Experience ko upar shift karna */
+    .about-info {
+        margin-top: 35px !important;
+    }
+}	
 .skill-mf .progress {
   /* background-color: #cde1f8; */
   margin: .5rem 0 1.2rem 0;
