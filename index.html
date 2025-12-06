@@ -233,14 +233,18 @@ Change only brightness() value below ⬇
 */
 
 
-/* Only Resume section center fix */
-#Documents-section .heading-section,
-#Documents-section h1.big-2,
-#Documents-section h2 {
-    text-align: center !important;
-}
+/* ===== Laptop/Desktop Center Headings (except About) ===== */
+    @media only screen and (min-width: 601px) {
 
+        .heading-section {
+            text-align: center !important;
+        }
 
+        #about-section .heading-section {
+            text-align: left !important;
+        }
+    }
+	
 </style>
 
 
