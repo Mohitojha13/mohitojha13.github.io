@@ -43,6 +43,52 @@
     margin-left: 10px;
 }
 
+/* ==== FULL ABOUT SECTION CENTER ON MOBILE ==== */
+@media only screen and (max-width: 600px) {
+
+    /* Complete About Section Center */
+    #about-section {
+        text-align: center !important;
+    }
+
+    /* Profile image center + smaller */
+    .about-mf .about-img img {
+        width: 170px !important;
+        height: 170px !important;
+        margin: 0 auto !important;
+        display: block;
+    }
+
+    /* Parent column center */
+    .img-about,
+    .about-mf .about-info,
+    .about-mf .col-sm-6,
+    .about-mf .col-md-5,
+    .about-mf .col-md-7 {
+        text-align: center !important;
+    }
+
+    /* All text inside About Section center */
+    .about-info p,
+    .heading-section,
+    .skill-mf {
+        text-align: center !important;
+    }
+
+    /* Skills bar left align the bars but center the labels */
+    .skill-mf span {
+        display: block;
+        text-align: center !important;
+    }
+
+    /* Progress bars width fix */
+    .skill-mf .progress {
+        margin-left: auto !important;
+        margin-right: auto !important;
+        width: 90% !important;
+    }
+}
+
 .skill-mf .progress {
   /* background-color: #cde1f8; */
   margin: .5rem 0 1.2rem 0;
