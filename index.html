@@ -42,22 +42,37 @@
 .about-mf .about-img img {
     margin-left: 10px;
 }
-/* Desktop view : About image bigger + little lower */
-@media only screen and (min-width: 992px) {
-    #about-section .about-img img {
-        margin-top: 10px !important;   /* thoda niche */
+
+/* ====== DESKTOP VIEW (LEFT ALIGN) ====== */
+@media only screen and (min-width: 601px) {
+    /* About Section Left */
+    #about-section,
+    .about-info,
+    .about-mf .col-sm-6,
+    .about-mf .col-md-5,
+    .about-mf .col-md-7,
+    .about-info p,
+    .heading-section {
+        text-align: left !important;
     }
 }
 
-/* === FULL ABOUT SECTION CENTER ON MOBILE (MERGED) === */
+/* Desktop view : About image bigger + little lower */
+@media only screen and (min-width: 992px) {
+    #about-section .about-img img {
+        margin-top: 10px !important;
+    }
+}
+
+/* ===== MOBILE VIEW (COMPLETE CENTER) ===== */
 @media only screen and (max-width: 600px) {
 
-    /* Complete About Section Center */
+    /* FULL ABOUT SECTION CENTER */
     #about-section {
         text-align: center !important;
     }
 
-    /* Image Fix */
+    /* IMAGE CENTER FIX */
     #about-section .about-img img {
         width: 260px !important;
         height: 260px !important;
@@ -70,63 +85,42 @@
         display: block !important;
         margin: 0 auto !important;
     }
-}
-    /* Parent column center */
-    .img-about,
-    .about-mf .about-info,
+
+    /* TEXT + HEADINGS CENTER */
+    .about-info,
+    .about-info p,
+    .heading-section,
     .about-mf .col-sm-6,
     .about-mf .col-md-5,
     .about-mf .col-md-7 {
         text-align: center !important;
     }
 
-    /* All About Me text center */
-    .about-info p,
-    .heading-section {
-        text-align: center !important;
-    }
-
-    /* ================================
-       FIX SKILLS LEFT ALIGN ON MOBILE
-       ================================ */
-
-    /* Keep skill section left aligned */
+    /* SKILLS SECTION LEFT MARGIN SAFE RAKHO */
     .skill-mf {
         text-align: left !important;
-		margin-left: 15px !important;
+        margin-left: 15px !important;
     }
 
-    /* Skill text little left margin */
     .skill-mf span {
         display: inline-block !important;
         text-align: left !important;
         margin-left: 15px !important;
     }
 
-    /* Progress bars left aligned */
     .skill-mf .progress {
         margin-left: 15px !important;
         margin-right: 0 !important;
         width: 90% !important;
     }
-}
-/* ABOUT INFO LIST LEFT MARGIN ON MOBILE */
-@media only screen and (max-width: 600px) {
 
+    /* About Info List Left */
     .about-info li {
-        margin-left: 15px !important;  /* Skills bar jaisa left gap */
-        text-align: left !important;   /* Ensure left */
+        margin-left: 15px !important;
+        text-align: left !important;
     }
 
-    .about-info li span {
-        display: inline-block;
-    }
-}
-
-/* ===== CENTER PROJECTS + GITHUB BUTTON ON MOBILE ===== */
-@media only screen and (max-width: 600px) {
-
-    /* Center the whole stats section */
+    /* Projects + GitHub button Center */
     .counter-wrap,
     .counter-num,
     .text,
@@ -136,17 +130,18 @@
         display: block !important;
     }
 
-    /* Center GitHub Button */
     .btn.btn-warning {
         display: block !important;
         margin: 20px auto !important;
         text-align: center !important;
     }
-}
-/* Only Skills heading ko left margin do */
+	/* Only Skills heading ko left margin do */
 .skill-mf h4 {
     margin-left: 20px !important;
+   }
 }
+
+
 	
 .skill-mf .progress {
   /* background-color: #cde1f8; */
@@ -238,6 +233,12 @@ Change only brightness() value below ⬇
 */
 
 
+/* Only Resume section center fix */
+#Documents-section .heading-section,
+#Documents-section h1.big-2,
+#Documents-section h2 {
+    text-align: center !important;
+}
 
 
 </style>
