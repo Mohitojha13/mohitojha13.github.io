@@ -68,23 +68,32 @@
         text-align: center !important;
     }
 
-    /* All text inside About Section center */
+    /* All About Me text center */
     .about-info p,
-    .heading-section,
+    .heading-section {
+        text-align: center !important;
+    }
+
+    /* ================================
+       FIX SKILLS LEFT ALIGN ON MOBILE
+       ================================ */
+
+    /* Keep skill section left aligned */
     .skill-mf {
-        text-align: center !important;
+        text-align: left !important;
     }
 
-    /* Skills bar left align the bars but center the labels */
+    /* Skill text little left margin */
     .skill-mf span {
-        display: block;
-        text-align: center !important;
+        display: inline-block !important;
+        text-align: left !important;
+        margin-left: 15px !important;
     }
 
-    /* Progress bars width fix */
+    /* Progress bars left aligned */
     .skill-mf .progress {
-        margin-left: auto !important;
-        margin-right: auto !important;
+        margin-left: 15px !important;
+        margin-right: 0 !important;
         width: 90% !important;
     }
 }
