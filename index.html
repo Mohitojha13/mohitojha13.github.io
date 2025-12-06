@@ -52,14 +52,17 @@
     }
 
 @media only screen and (max-width: 600px) {
-    .about-mf .about-img img {
-        width: 20px !important;
-        height: 20px !important;
-        max-width: none !important;    /* img-fluid override */
+    #about-section .about-img img {
+        width: 60px !important;
+        height: 60px !important;
+        max-width: 60px !important;     /* img-fluid override */
+        max-height: 60px !important;
+        min-width: 60px !important;     /* force fix */
+        min-height: 60px !important;    /* force fix */
         object-fit: cover !important;
         border-radius: 50% !important;
-        margin: 0 auto !important;
         display: block !important;
+        margin: 0 auto !important;
     }
 }
     /* Parent column center */
