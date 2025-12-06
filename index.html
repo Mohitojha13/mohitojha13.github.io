@@ -51,13 +51,17 @@
         text-align: center !important;
     }
 
-    /* Profile image center + smaller */
+@media only screen and (max-width: 600px) {
     .about-mf .about-img img {
-        width: 130px !important;
-        height: 130px !important;
+        width: 120px !important;
+        height: 120px !important;
+        max-width: none !important;    /* img-fluid override */
+        object-fit: cover !important;
+        border-radius: 50% !important;
         margin: 0 auto !important;
-        display: block;
+        display: block !important;
     }
+}
     /* Parent column center */
     .img-about,
     .about-mf .about-info,
