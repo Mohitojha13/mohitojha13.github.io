@@ -58,6 +58,8 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         :root {
@@ -94,6 +96,9 @@
             color: var(--text-light);
             line-height: 1.6;
             transition: all 0.3s ease;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
         }
 
         body.dark-mode {
@@ -723,6 +728,10 @@
             margin-top: 3rem;
         }
 
+        .about-content > * {
+            min-width: 0;
+        }
+
         @media (max-width: 1024px) {
             .about-content {
                 grid-template-columns: 1fr;
@@ -745,9 +754,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 480px;
-            height: 480px;
-            max-width: 100%;
+            width: 100%;
+            max-width: 480px;
+            aspect-ratio: 1 / 1;
             margin: 50px auto 0;
             overflow: visible;
         }
@@ -2606,12 +2615,12 @@ body.dark-mode .counter-label {
             </div>
 
             <div class="cert-card scroll-animate">
-                <a href="https://drive.google.com/file/d/12EwS3iHHLVgMrU0B4f2NO6i2sGXAmnQ8/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-title-link">
-                    <img src="images/internship.jpg" alt="Internship Certificate" class="cert-image" loading="lazy">
-                    <h3>Internship Certificate</h3>
+                <a href="https://drive.google.com/file/d/1vFOiW8txPMYS6zwIHZw8zq6NdNrzpcpL/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="cert-title-link">
+                    <img src="images/tu da.jpg" alt="Internship Certificate" class="cert-image" loading="lazy">
+                    <h3>Data Analyst</h3>
                 </a>
-                <div class="cert-issuer">Unified Mentor</div>
-                <a href="https://drive.google.com/file/d/12EwS3iHHLVgMrU0B4f2NO6i2sGXAmnQ8/view?usp=drive_link" class="cert-link" target="_blank" rel="noopener noreferrer">View Credential <i class="fas fa-arrow-right" style="font-size:0.8em;"></i></a>
+                <div class="cert-issuer">Tutedude</div>
+                <a href="https://drive.google.com/file/d/1vFOiW8txPMYS6zwIHZw8zq6NdNrzpcpL/view?usp=drivesdk" class="cert-link" target="_blank" rel="noopener noreferrer">View Credential <i class="fas fa-arrow-right" style="font-size:0.8em;"></i></a>
             </div>
 
             <div class="cert-card scroll-animate">
