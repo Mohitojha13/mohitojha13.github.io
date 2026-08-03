@@ -5,8 +5,8 @@
     <meta name="theme-color" content="#0f172a">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohit Ojha - Portfolio</title>
-    <link rel="icon" type="image/png" href="images/about.png">
-    <link rel="apple-touch-icon" href="images/about.png">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='60' font-weight='800' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3EM%3C/text%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230f172a'/%3E%3Ctext x='50' y='68' font-size='60' font-weight='800' fill='white' text-anchor='middle' font-family='Arial, sans-serif'%3EM%3C/text%3E%3C/svg%3E">
     <link rel="manifest" href="manifest.json">
     <meta name="description" content="Mohit Ojha is an MIS Executive & Data Analyst specializing in Power BI, SQL, Python, and Excel — turning raw data into actionable insights that drive smarter business decisions.">
     <meta name="keywords" content="Mohit Ojha, Data Analyst, Power BI, Python Developer, Business Intelligence, SQL">
@@ -134,13 +134,14 @@
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2.1rem;
             font-weight: 700;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--text-light);
             text-decoration: none;
+        }
+
+        body.dark-mode .logo {
+            color: #ffffff;
         }
 
         .nav-links {
@@ -163,8 +164,11 @@
         }
 
         .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--primary);
+        .nav-links a.active,
+        body.dark-mode .nav-links a:hover,
+        body.dark-mode .nav-links a.active {
+            color: #ffbd39;
+            font-weight: 700;
         }
 
         .nav-links a::after {
@@ -174,7 +178,7 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--primary);
+            background: #ffbd39;
             transition: width 0.3s ease;
         }
 
@@ -258,6 +262,17 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
+        }
+
+        .hero-clock {
+            display: inline-block;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-left: 0.6rem;
+            margin-bottom: 0.5rem;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.3px;
         }
 
         .hero-content {
@@ -497,7 +512,7 @@
             max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 1.5rem;
             text-align: center;
         }
@@ -552,8 +567,8 @@
 
         @media (max-width: 768px) {
             .stats-strip-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.2rem;
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
         }
 
@@ -633,7 +648,7 @@
 
         .skills-layout {
             display: grid;
-            grid-template-columns: 1fr 1.3fr;
+            grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: stretch;
             margin-top: 2rem;
@@ -647,7 +662,7 @@
             border-top: 3px solid var(--primary);
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             margin-top: 0;
         }
 
@@ -732,7 +747,7 @@
             min-width: 0;
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 960px) {
             .about-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -827,7 +842,7 @@
             letter-spacing: 0.5px;
         }
 
-        @media (min-width: 769px) {
+        @media (min-width: 1025px) {
        .about-text h3 {
            white-space: nowrap;
        }
@@ -884,6 +899,22 @@
 
         .about-info-list li span:last-child {
             color: var(--text-secondary-light);
+        }
+
+        .about-info-list li span.mis-role,
+        .about-info-list li span.date-range {
+            font-weight: normal !important;
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .date-range {
+                white-space: nowrap;
+            }
+
+            .mis-role {
+                white-space: nowrap;
+                font-weight: normal;
+            }
         }
 
         @media (min-width: 769px) {
@@ -1119,10 +1150,29 @@ body.dark-mode .counter-label {
 
         @media (min-width: 769px) and (max-width: 1024px) {
             .contact-cards {
-                grid-template-columns: repeat(2, 1fr);
-                max-width: 700px;
+                grid-template-columns: repeat(4, 1fr);
+                max-width: 1000px;
                 margin-left: auto;
                 margin-right: auto;
+            }
+
+            .contact-card {
+                padding: 1.2rem 0.8rem;
+            }
+
+            .contact-card i {
+                font-size: 1.8rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .contact-card h3 {
+                font-size: 1rem;
+                margin-bottom: 0.6rem;
+            }
+
+            .contact-card a {
+                font-size: 0.8rem;
+                word-break: break-word;
             }
         }
 
@@ -1174,9 +1224,11 @@ body.dark-mode .counter-label {
             transition: color 0.3s ease;
         }
         
-        .location-link {
-    white-space: nowrap;
-       }
+        @media (min-width: 1025px) {
+            .location-link {
+                white-space: nowrap;
+            }
+        }
        
         .contact-card a:hover {
             color: #0ea5e9;
@@ -1446,6 +1498,104 @@ body.dark-mode .counter-label {
 .cert-image:hover {
     transform: scale(1.05);
 }
+
+        /* ---- Project thumbnail (clickable) ---- */
+        .project-thumb-wrap {
+            position: relative;
+            display: block;
+            cursor: pointer;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .project-thumb-wrap:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .project-thumb-wrap::after {
+            content: '🔍 Click to expand';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(15, 23, 42, 0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+            font-weight: 500;
+        }
+
+        .project-thumb-wrap:hover::after {
+            opacity: 1;
+        }
+
+        /* ---- Project Image Lightbox (Certificate Style) ---- */
+        .project-lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 3000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.2rem;
+        }
+
+        .project-lightbox.active {
+            display: flex;
+        }
+
+        .project-lightbox-inner {
+            width: 100%;
+            max-width: 1000px;
+            position: relative;
+            background: var(--bg-light);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        body.dark-mode .project-lightbox-inner {
+            background: var(--bg-secondary-dark);
+        }
+
+        .project-lightbox img {
+            width: 100%;
+            height: auto;
+            max-height: 75vh;
+            border-radius: 12px;
+            display: block;
+        }
+
+        .project-lightbox-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+            border: none;
+            color: #fff;
+            font-size: 1.4rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+
+        .project-lightbox-close:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
 
         .cert-card h3 {
             font-size: 1.3rem;
@@ -2090,6 +2240,190 @@ body.dark-mode .counter-label {
             box-shadow: 0 6px 20px rgba(0,0,0,0.4);
         }
 
+        .availability-badge {
+            display: block;
+            background: rgba(34, 197, 94, 0.12);
+            border: 1px solid #22c55e;
+            color: #4ade80;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.9rem 1.1rem;
+            border-radius: 12px;
+            line-height: 1.7;
+            margin: 0.8rem 0 1.2rem;
+        }
+
+        .availability-card {
+            margin: 1.2rem 0 0.3rem;
+            padding: 1.2rem 1.3rem;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.08), rgba(56, 189, 248, 0.05));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+        }
+
+        /* ---- Data Analysis Process card ---- */
+        .process-card {
+            margin: 1.2rem 0 0.3rem;
+            padding: 1.2rem 1.1rem;
+            background: rgba(51, 65, 85, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+        }
+
+        .process-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-secondary-dark);
+            margin-bottom: 1.1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .process-title i {
+            color: var(--accent);
+            font-size: 0.85rem;
+        }
+
+        .process-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            flex-wrap: nowrap;
+        }
+
+        .process-track {
+            position: absolute;
+            top: 22px;
+            left: 22px;
+            right: 22px;
+            height: 2px;
+            background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
+            opacity: 0.3;
+            border-radius: 2px;
+        }
+
+        .process-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .process-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, var(--bg-secondary-dark), var(--bg-tertiary-dark));
+            border: 1px solid rgba(102, 126, 234, 0.4);
+            color: #a5b4fc;
+            font-size: 1rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .process-step:hover .process-icon {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.35);
+        }
+
+        .process-step span {
+            color: var(--text-secondary-dark);
+            font-weight: 500;
+            font-size: 0.65rem;
+            text-align: center;
+            letter-spacing: 0.2px;
+        }
+
+        @media (max-width: 480px) {
+            .process-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 0.85rem;
+                border-radius: 11px;
+            }
+            .process-step span {
+                font-size: 0.58rem;
+            }
+            .process-track {
+                top: 18px;
+            }
+        }
+
+        .availability-title {
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-secondary-dark);
+            margin-bottom: 0.9rem;
+        }
+
+        .availability-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+        }
+
+        .availability-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.7rem;
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.5);
+            color: #4ade80;
+            font-weight: 600;
+            font-size: 0.9rem;
+            padding: 0.75rem 1.1rem;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(34, 197, 94, 0.08);
+        }
+
+        .availability-btn .badge-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #22c55e;
+            flex-shrink: 0;
+            box-shadow: 0 0 8px #22c55e;
+            animation: pulseDot 2s infinite;
+        }
+
+        .availability-btn i {
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .availability-btn:hover {
+            background: linear-gradient(135deg, #22c55e, #16a34a);
+            color: #ffffff;
+            border-color: transparent;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(34, 197, 94, 0.35);
+        }
+
+        .relocate-btn {
+            background: rgba(56, 189, 248, 0.1);
+            border: 1px solid rgba(56, 189, 248, 0.5);
+            color: #38bdf8;
+            box-shadow: 0 3px 10px rgba(56, 189, 248, 0.08);
+        }
+
+        .relocate-btn:hover {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 8px 20px rgba(56, 189, 248, 0.35);
+        }
+
         .learning-badge {
             display: inline-flex;
             align-items: center;
@@ -2205,6 +2539,7 @@ body.dark-mode .counter-label {
         <div class="hero-wrapper">
             <div class="hero-content">
                 <span class="subheading" id="heroGreeting">👋 Hello!</span>
+                <span class="hero-clock" id="heroClock"></span>
                 <h1>Hi, I'm <span class="hero-name">Mohit Ojha</span></h1>
                 <!-- <p class="hero-role">Data Analyst | Business Analyst | Power BI & Excel Expert</p> -->
                 <p class="hero-subtitle">
@@ -2236,17 +2571,24 @@ body.dark-mode .counter-label {
                         <img id="aboutPhoto" src="images/about.png" alt="Mohit Ojha - Data Analyst profile photo" loading="lazy">
                     </div>
                     <svg class="opentowork-ring" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                        <defs>
-                            <path id="otwTextPath" d="M 34,150 A 84,84 0 0 0 166,150" />
-                        </defs>
                         <!-- thin light-green ring around full photo -->
                         <circle cx="100" cy="100" r="97" fill="none" stroke="#ffffff" stroke-width="2.2" />
                         <!-- bold dark-green arc at bottom carrying the text, tilted like LinkedIn -->
                         <g transform="rotate(28 100 100)">
                             <path d="M 30,152 A 88,88 0 0 0 170,152" fill="none" stroke="#0a5c2e" stroke-width="24" stroke-linecap="round" />
-                            <text>
-                                <textPath href="#otwTextPath" startOffset="50%" text-anchor="middle">#OPENTOWORK</textPath>
-                            </text>
+                            <g class="otw-letters">
+                            <text x="50.19" y="171.22" text-anchor="middle" transform="rotate(34.48 50.19 171.22)">#</text>
+                            <text x="60.56" y="177.34" text-anchor="middle" transform="rotate(26.63 60.56 177.34)">O</text>
+                            <text x="70.01" y="181.40" text-anchor="middle" transform="rotate(19.92 70.01 181.40)">P</text>
+                            <text x="78.42" y="183.98" text-anchor="middle" transform="rotate(14.19 78.42 183.98)">E</text>
+                            <text x="87.84" y="185.83" text-anchor="middle" transform="rotate(7.94 87.84 185.83)">N</text>
+                            <text x="97.70" y="186.64" text-anchor="middle" transform="rotate(1.50 97.70 186.64)">T</text>
+                            <text x="107.79" y="186.33" text-anchor="middle" transform="rotate(-5.08 107.79 186.33)">O</text>
+                            <text x="120.61" y="184.22" text-anchor="middle" transform="rotate(-13.54 120.61 184.22)">W</text>
+                            <text x="132.98" y="180.26" text-anchor="middle" transform="rotate(-22.01 132.98 180.26)">O</text>
+                            <text x="142.45" y="175.75" text-anchor="middle" transform="rotate(-28.84 142.45 175.75)">R</text>
+                            <text x="150.88" y="170.47" text-anchor="middle" transform="rotate(-35.32 150.88 170.47)">K</text>
+                            </g>
                         </g>
                     </svg>
                 </div>
@@ -2262,9 +2604,6 @@ body.dark-mode .counter-label {
                 <p>
                     I'm a problem solver at heart who believes that great data analysis goes beyond numbers — it's about understanding the business context and delivering insights that actually matter.
                 </p>
-                <div class="learning-badge">
-                    <i class="fas fa-rocket"></i> Currently exploring: Advanced Python, Machine Learning, Deep Learning &amp; AI for Data Science.
-                </div>
             </div>
         </div>
     </section>
@@ -2279,9 +2618,9 @@ body.dark-mode .counter-label {
         <div class="skills scroll-animate" style="margin-bottom: 0;">
             <h2 class="about-name">Mohit Kumar Ojha</h2>
             <ul class="about-info-list">
-                <li><span>Profile :</span> <span>Data Analyst & Business Analyst, MIS Executive & MIS Analyst</span></li>
-                <li><span>Education :</span> <span>Bachelor of Arts (History), 2021 - 2024</span></li>
-                <li><span>Experience :</span> <span><strong>MIS Executive</strong><br>2 Years+ experience in data reporting, data analysis, and dashboard management.</span></li>
+                <li><span>Profile :</span> <span>Data Analyst & Business Analyst, <span class="mis-role">MIS Executive & MIS Analyst</span></span></li>
+                <li><span>Education :</span> <span>Bachelor of Arts (History), <span class="date-range">2021 - 2024</span></span></li>
+                <li><span>Experience :</span> <span><strong style="color:#ffffff; font-weight:700;">MIS Executive</strong><br>2 Years+ experience in data reporting, data analysis, and dashboard management.</span></li>
             </ul>
             <div class="skill-item">
                 <div class="skill-label">
@@ -2312,6 +2651,24 @@ body.dark-mode .counter-label {
             </div>
             <div class="skill-item">
                 <div class="skill-label">
+                    <span>Python</span>
+                    <span>85%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 85%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">
+                    <span>Data Cleaning</span>
+                    <span>90%</span>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 90%"></div>
+                </div>
+            </div>
+            <div class="skill-item">
+                <div class="skill-label">
                     <span>Data Analysis</span>
                     <span>92%</span>
                 </div>
@@ -2330,11 +2687,37 @@ body.dark-mode .counter-label {
             </div>
             <div class="skill-item">
                 <div class="skill-label">
-                    <span>Data Cleaning</span>
-                    <span>90%</span>
+                    <span>Dashboard Automation</span>
+                    <span>92%</span>
                 </div>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 90%"></div>
+                    <div class="progress-fill" style="width: 92%"></div>
+                </div>
+            </div>
+            <div class="process-card">
+                <div class="process-title"><i class="fas fa-diagram-project"></i> My Data Analysis Process</div>
+                <div class="process-flow">
+                    <div class="process-track"></div>
+                    <div class="process-step">
+                        <div class="process-icon"><i class="fas fa-database"></i></div>
+                        <span>Collect</span>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon"><i class="fas fa-broom"></i></div>
+                        <span>Clean</span>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
+                        <span>Analyze</span>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon"><i class="fas fa-chart-pie"></i></div>
+                        <span>Visualize</span>
+                    </div>
+                    <div class="process-step">
+                        <div class="process-icon"><i class="fas fa-file-lines"></i></div>
+                        <span>Report</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -2397,6 +2780,13 @@ body.dark-mode .counter-label {
                 <div class="skill-tag-list">
                     <span class="tag">Hindi</span>
                     <span class="tag">English</span>
+                </div>
+            </div>
+
+            <div class="skill-subsection">
+                <h3><i class="fas fa-rocket"></i> Currently Learning</h3>
+                <div class="learning-badge">
+                    <i class="fas fa-rocket"></i> Currently exploring: Advanced Python, Machine Learning, Deep Learning &amp; AI for Data Science.
                 </div>
             </div>
         </div>
@@ -2562,7 +2952,7 @@ body.dark-mode .counter-label {
 
             <div class="cert-card scroll-animate">
                 <a href="https://drive.google.com/file/d/1CatxuBgckUOOHMHCPXWf3SvaBYl9_Nil/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-title-link">
-                    <img src="images/DA COURSE.jpg" alt="Data Analyst Course Certificate" class="cert-image" loading="lazy">
+                    <img src="images/DA-COURSE.jpg" alt="Data Analyst Course Certificate" class="cert-image" loading="lazy">
                     <h3>Data Analyst</h3>
                 </a>
                 <div class="cert-issuer">Esclancer E-Learning Platform</div>
@@ -2571,7 +2961,7 @@ body.dark-mode .counter-label {
 
             <div class="cert-card scroll-animate">
                 <a href="https://drive.google.com/file/d/1CatxuBgckUOOHMHCPXWf3SvaBYl9_Nil/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cert-title-link">
-                    <img src="images/DA LT.jpg" alt="Data Analyst Live Training Certificate" class="cert-image" loading="lazy">
+                    <img src="images/DA-LT.jpg" alt="Data Analyst Live Training Certificate" class="cert-image" loading="lazy">
                     <h3>Data Analyst</h3>
                 </a>
                 <div class="cert-issuer">Learn Tube</div>
@@ -2616,7 +3006,7 @@ body.dark-mode .counter-label {
 
             <div class="cert-card scroll-animate">
                 <a href="https://drive.google.com/file/d/1vFOiW8txPMYS6zwIHZw8zq6NdNrzpcpL/view?usp=drivesdk" target="_blank" rel="noopener noreferrer" class="cert-title-link">
-                    <img src="images/tu da.jpg" alt="Internship Certificate" class="cert-image" loading="lazy">
+                    <img src="images/tu-da.jpg" alt="Internship Certificate" class="cert-image" loading="lazy">
                     <h3>Data Analyst</h3>
                 </a>
                 <div class="cert-issuer">Tutedude</div>
@@ -2656,7 +3046,9 @@ body.dark-mode .counter-label {
         <div class="projects-grid">
             <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Mobile-sales-Dashboard" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/mobail.jpg" alt="Mobile Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/mobail.jpg">
+                        <img src="images/mobail.jpg" alt="Mobile Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>Mobile Sales Dashboard</h3>
                     </div>
@@ -2671,24 +3063,10 @@ body.dark-mode .counter-label {
             </div>
 
             <div class="project-card scroll-animate">
-                <a href="https://github.com/Mohitojha13/Zomato-project-using-python" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/zomato.jpg" alt="Zomato Sales Data Analysis using Python and Pandas - Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
-                    <div class="project-content" style="padding-bottom:0;">
-                        <h3>Zomato Sales Data Analysis</h3>
-                    </div>
-                </a>
-                <div class="project-content" style="padding-top:0;">
-                    <p>Analyzed Zomato sales data using Python to identify order trends, customer behavior, and revenue patterns.</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Pandas</span>
-                        <span class="tag">Data Analysis</span>                    </div>
-                </div>
-            </div>
-
-            <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Credit-card-financial-dashboard" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/Credit.jpg" alt="Credit Card Financial Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/Credit.jpg">
+                        <img src="images/Credit.jpg" alt="Credit Card Financial Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>Credit Card Dashboard</h3>
                     </div>
@@ -2704,7 +3082,9 @@ body.dark-mode .counter-label {
 
             <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Maven-Market-Report-Analyze" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/Maven.jpg" alt="E-Commerce Market Analysis Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/Maven.jpg">
+                        <img src="images/Maven.jpg" alt="E-Commerce Market Analysis Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>E-Commerce Market Analysis</h3>
                     </div>
@@ -2720,7 +3100,9 @@ body.dark-mode .counter-label {
 
             <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Super-Store-Sales-dashboard" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/super.jpg" alt="Super Store Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/super.jpg">
+                        <img src="images/super.jpg" alt="Super Store Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>Super Store Data Analysis</h3>
                     </div>
@@ -2736,7 +3118,9 @@ body.dark-mode .counter-label {
 
             <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Ola-Ride-Booking-Projects" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/overall.jpg" alt="Ola Ride Booking Analysis Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/overall.jpg">
+                        <img src="images/overall.jpg" alt="Ola Ride Booking Analysis Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>Ola Ride Booking Analysis</h3>
                     </div>
@@ -2753,7 +3137,9 @@ body.dark-mode .counter-label {
 
             <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Blinkit-sales-dashboard" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/bl.jpg" alt="Blinkit Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/bl.jpg">
+                        <img src="images/bl.jpg" alt="Blinkit Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>Blinkit Sales Dashboard</h3>
                     </div>
@@ -2770,7 +3156,9 @@ body.dark-mode .counter-label {
 
             <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Hr-Analyst-dashboard" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/hr.jpg" alt="HR Analyst Power BI Dashboard - Employee Attrition Analysis Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/hr.jpg">
+                        <img src="images/hr.jpg" alt="HR Analyst Power BI Dashboard - Employee Attrition Analysis Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>HR Analyst Dashboard</h3>
                     </div>
@@ -2787,7 +3175,9 @@ body.dark-mode .counter-label {
 
             <div class="project-card scroll-animate">
                 <a href="https://github.com/Mohitojha13/Madhav-Ecommerce-Sale-Dashboard" target="_blank" rel="noopener noreferrer" class="project-title-link">
-                    <img src="images/me.jpg" alt="E-Commerce Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-thumb-wrap" data-project-img="images/me.jpg">
+                        <img src="images/me.jpg" alt="E-Commerce Sales Power BI Dashboard - Data Analyst Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    </div>
                     <div class="project-content" style="padding-bottom:0;">
                         <h3>E-Commerce Sale Dashboard</h3>
                     </div>
@@ -2799,6 +3189,22 @@ body.dark-mode .counter-label {
                         <span class="tag">Power-BI</span>
                         <span class="tag">Dax</span>
                     </div>
+                </div>
+            </div>
+
+            <div class="project-card scroll-animate">
+                <a href="https://github.com/Mohitojha13/Zomato-project-using-python" target="_blank" rel="noopener noreferrer" class="project-title-link">
+                    <img src="images/zomato.jpg" alt="Zomato Sales Data Analysis using Python and Pandas - Portfolio Project by Mohit Ojha" class="cert-image" loading="lazy">
+                    <div class="project-content" style="padding-bottom:0;">
+                        <h3>Zomato Sales Data Analysis</h3>
+                    </div>
+                </a>
+                <div class="project-content" style="padding-top:0;">
+                    <p>Analyzed Zomato sales data using Python to identify order trends, customer behavior, and revenue patterns.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Pandas</span>
+                        <span class="tag">Data Analysis</span>                    </div>
                 </div>
             </div>
 
@@ -2860,7 +3266,7 @@ body.dark-mode .counter-label {
     <section class="stats-strip">
         <div class="stats-strip-grid">
             <a href="#projects" class="stats-strip-item scroll-animate">
-                <i class="fas fa-diagram-project stats-strip-icon"></i>
+                <i class="fas fa-chart-column stats-strip-icon"></i>
                 <span class="stats-strip-number"><span class="number" data-number="20">0</span>+</span>
                 <p>Projects Completed</p>
             </a>
@@ -2870,7 +3276,7 @@ body.dark-mode .counter-label {
                 <p>Years Experience</p>
             </a>
             <a href="#about" class="stats-strip-item scroll-animate">
-                <i class="fas fa-gauge-high stats-strip-icon"></i>
+                <i class="fas fa-file-excel stats-strip-icon"></i>
                 <span class="stats-strip-number"><span class="number" data-number="50">0</span>K+</span>
                 <p>Excel Rows Handled</p>
             </a>
@@ -2878,6 +3284,11 @@ body.dark-mode .counter-label {
                 <i class="fas fa-award stats-strip-icon"></i>
                 <span class="stats-strip-number"><span class="number" data-number="10">0</span>+</span>
                 <p>Certifications</p>
+            </a>
+            <a href="https://www.hackerrank.com/profile/ojhamohit13" target="_blank" rel="noopener noreferrer" class="stats-strip-item scroll-animate">
+                <i class="fas fa-star stats-strip-icon" style="color:#ffbd39;"></i>
+                <span class="stats-strip-number"><span class="number" data-number="5">0</span>★</span>
+                <p>HackerRank SQL</p>
             </a>
         </div>
 
@@ -2903,7 +3314,7 @@ body.dark-mode .counter-label {
             <div class="contact-card scroll-animate">
                 <i class="fas fa-phone"></i>
                 <h3>Phone</h3>
-                <a href="tel:+910000000000" class="location-link">+91 0000000000</a>
+                <a href="tel:+917296052960" class="location-link">+91 7296052960</a>
             </div>
 
             <div class="contact-card scroll-animate">
@@ -3006,6 +3417,17 @@ body.dark-mode .counter-label {
         <span class="cert-lightbox-counter" id="certLightboxCounter"></span>
     </div>
 
+    <!-- ============ PROJECT VIDEO LIGHTBOX ============ -->
+    <!-- Project Image Lightbox (Certificate Style) -->
+    <div class="project-lightbox" id="projectLightbox">
+        <div class="project-lightbox-inner">
+            <button class="project-lightbox-close" id="projectLightboxClose" aria-label="Close">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="projectLightboxImg" src="" alt="Project Image" loading="lazy">
+        </div>
+    </div>
+
     <!-- ============ ASK-ABOUT-ME CHATBOT ============ -->
     <div class="chatbot-widget">
         <button class="chatbot-toggle" id="chatbotToggle" aria-label="Ask about Mohit">
@@ -3025,10 +3447,25 @@ body.dark-mode .counter-label {
                     Hi! 👋 I can answer quick questions about Mohit's skills, experience, projects, or contact info. Try one below, or type your own.
                 </div>
                 <div class="chatbot-quick-replies">
-                    <button class="chatbot-chip" data-q="skills">Skills</button>
-                    <button class="chatbot-chip" data-q="experience">Experience</button>
-                    <button class="chatbot-chip" data-q="projects">Projects</button>
-                    <button class="chatbot-chip" data-q="contact">Contact</button>
+                    <button class="chatbot-chip" data-q="skills">About Skills</button>
+                    <button class="chatbot-chip" data-q="experience">About Experience</button>
+                    <button class="chatbot-chip" data-q="projects">About Projects</button>
+                    <button class="chatbot-chip" data-q="contact">About Contact</button>
+                    <button class="chatbot-chip" data-q="skills">What tools do you specialize in?</button>
+                    <button class="chatbot-chip" data-q="remote">Are you open to remote or on-site roles?</button>
+                    <button class="chatbot-chip" data-q="experience">What's your experience level?</button>
+                    <button class="chatbot-chip" data-q="projects">What kind of projects have you worked on?</button>
+                    <button class="chatbot-chip" data-q="open to work">Are you currently available for new opportunities?</button>
+                    <button class="chatbot-chip" data-q="contact">How can I get in touch with you?</button>
+                    <button class="chatbot-chip" data-q="notice period">What's your notice period?</button>
+                    <button class="chatbot-chip" data-q="large dataset">Experience with large datasets?</button>
+                    <button class="chatbot-chip" data-q="from scratch">Can you build dashboards from scratch?</button>
+                    <button class="chatbot-chip" data-q="industries">What industries have you worked in?</button>
+                    <button class="chatbot-chip" data-q="stakeholder">Present to non-technical stakeholders?</button>
+                    <button class="chatbot-chip" data-q="certification">Do you have a certification in Data Analytics?</button>
+                    <button class="chatbot-chip" data-q="learning">Are you pursuing any further studies or certifications?</button>
+                    <button class="chatbot-chip" data-q="freelance">Do you work on freelance/contract projects?</button>
+                    <button class="chatbot-chip" data-q="language">What languages do you speak?</button>
                 </div>
             </div>
             <form class="chatbot-input-row" id="chatbotForm">
@@ -3044,36 +3481,6 @@ body.dark-mode .counter-label {
     </button>
 
     <script>
-        // ============ AUTO FAVICON FROM ABOUT PHOTO ============
-        (function setFaviconFromAboutPhoto() {
-            const aboutImg = document.getElementById('aboutPhoto');
-            if (!aboutImg) return;
-
-            function applyFavicon() {
-                let link = document.querySelector("link[rel='icon']");
-                if (!link) {
-                    link = document.createElement('link');
-                    link.rel = 'icon';
-                    document.head.appendChild(link);
-                }
-                link.href = aboutImg.src;
-
-                let appleLink = document.querySelector("link[rel='apple-touch-icon']");
-                if (!appleLink) {
-                    appleLink = document.createElement('link');
-                    appleLink.rel = 'apple-touch-icon';
-                    document.head.appendChild(appleLink);
-                }
-                appleLink.href = aboutImg.src;
-            }
-
-            if (aboutImg.complete) {
-                applyFavicon();
-            } else {
-                aboutImg.addEventListener('load', applyFavicon);
-            }
-        })();
-
         // ============ AUTO YEAR ============
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
@@ -3143,15 +3550,19 @@ body.dark-mode .counter-label {
 
         // ============ PROGRESS BAR ANIMATION ============
         const progressFills = document.querySelectorAll('.progress-fill');
+        progressFills.forEach(fill => {
+            fill.dataset.targetWidth = fill.style.width;
+        });
         const progressObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
+                const el = entry.target;
                 if (entry.isIntersecting) {
-                    const width = entry.target.style.width;
-                    entry.target.style.width = '0';
+                    el.style.width = '0';
                     setTimeout(() => {
-                        entry.target.style.width = width;
+                        el.style.width = el.dataset.targetWidth;
                     }, 100);
-                    progressObserver.unobserve(entry.target);
+                } else {
+                    el.style.width = '0';
                 }
             });
         }, { threshold: 0.5 });
@@ -3162,23 +3573,32 @@ body.dark-mode .counter-label {
         const statCounters = document.querySelectorAll('[data-number]');
 const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
+        const el = entry.target;
         if (entry.isIntersecting) {
-            const el = entry.target;
+            if (el._counterTimer) clearInterval(el._counterTimer);
             const target = parseInt(el.dataset.number, 10);
             let current = 0;
+            const increment = target > 10 ? 10 : 1;
+            const steps = Math.ceil(target / increment);
             const duration = 2000;
-            const stepTime = Math.max(Math.floor(duration / target), 80);
+            const stepTime = Math.max(Math.floor(duration / steps), 80);
 
             el.textContent = '0';
-            const timer = setInterval(() => {
-                current++;
-                el.textContent = current;
+            el._counterTimer = setInterval(() => {
+                current += increment;
                 if (current >= target) {
-                    clearInterval(timer);
+                    current = target;
+                    el.textContent = current;
+                    clearInterval(el._counterTimer);
+                } else {
+                    el.textContent = current;
                 }
             }, stepTime);
-
-            counterObserver.unobserve(el);
+        } else {
+            if (el._counterTimer) {
+                clearInterval(el._counterTimer);
+                el._counterTimer = null;
+            }
         }
     });
 }, { threshold: 0.1 });
@@ -3419,7 +3839,13 @@ statCounters.forEach(counter => counterObserver.observe(counter));
                 { keys: ['resume', 'cv', 'download'], a: "You can view/download Mohit's resume via the 'Download CV' button in the hero section, or 'View My Resume' in the Certifications section." },
 
                 // ---- Availability ----
-                { keys: ['open to work', 'available', 'looking for job', 'freelance', 'hiring', 'vacancy'], a: "Yes, Mohit is currently open to new Data Analyst / Business Analyst / BI Analyst opportunities! Feel free to reach out via email or LinkedIn." },
+                { keys: ['open to work', 'available', 'looking for job', 'freelance', 'hiring', 'vacancy'], a: "Yes, Mohit is currently open to new Data Analyst / Business Analyst / MIS Analyst / MIS Executive opportunities, including freelance and contract-based projects, along with full-time roles. Feel free to reach out via email or LinkedIn." },
+                { keys: ['remote', 'on-site', 'onsite', 'hybrid', 'relocate', 'relocation'], a: "Mohit is open to remote, hybrid, and on-site roles. He's currently based in Gurugram, Haryana and open to relocation." },
+                { keys: ['notice period', 'join', 'joining', 'immediate joiner'], a: "Mohit is an immediate joiner and can start right away." },
+                { keys: ['industry', 'industries', 'domain', 'sector'], a: "Through his personal and portfolio projects, Mohit has explored data across retail/e-commerce, HR, finance, and transportation domains — building dashboards and analysis that reflect real-world business scenarios." },
+                { keys: ['stakeholder', 'non-technical', 'presenting', 'presentation', 'explain data'], a: "Mohit focuses on turning complex data into clear, easy-to-understand insights for both technical and non-technical audiences." },
+                { keys: ['from scratch', 'raw data', 'clean data', 'end to end', 'end-to-end'], a: "Mohit handles the full process — from collecting and cleaning raw data to building the final dashboard and reporting insights." },
+                { keys: ['large dataset', 'big data', 'database'], a: "Mohit has handled 50K+ Excel rows and works extensively with SQL for querying and managing large datasets. He's also a 5-star rated SQL user on HackerRank." },
 
                 // ---- Small talk ----
                 { keys: ['hi', 'hello', 'hey', 'namaste'], a: "Hey there! 👋 Ask me anything about Mohit's skills, experience, projects, education, or certifications." },
@@ -3510,6 +3936,25 @@ statCounters.forEach(counter => counterObserver.observe(counter));
             greetingEl.textContent = '👋 ' + greeting;
         })();
 
+        // ============ LIVE CLOCK ============
+        (function runLiveClock() {
+            const clockEl = document.getElementById('heroClock');
+            if (!clockEl) return;
+            function updateClock() {
+                const now = new Date();
+                let h = now.getHours();
+                const m = String(now.getMinutes()).padStart(2, '0');
+                const s = String(now.getSeconds()).padStart(2, '0');
+                const ampm = h >= 12 ? 'PM' : 'AM';
+                h = h % 12;
+                if (h === 0) h = 12;
+                const hh = String(h).padStart(2, '0');
+                clockEl.textContent = `${hh}:${m}:${s} ${ampm}`;
+            }
+            updateClock();
+            setInterval(updateClock, 1000);
+        })();
+
         // ============ CERTIFICATE LIGHTBOX ============
         (function setupCertLightbox() {
             const certCards = Array.from(document.querySelectorAll('.cert-card'));
@@ -3582,6 +4027,44 @@ statCounters.forEach(counter => counterObserver.observe(counter));
             });
         })();
 
+        // ============ PROJECT IMAGE LIGHTBOX (CERTIFICATE STYLE) ============
+        (function setupProjectLightbox() {
+            const projectThumbs = Array.from(document.querySelectorAll('.project-thumb-wrap'));
+            const lightbox = document.getElementById('projectLightbox');
+            if (!projectThumbs.length || !lightbox) return;
+
+            const lightboxImg = document.getElementById('projectLightboxImg');
+            const lightboxClose = document.getElementById('projectLightboxClose');
+
+            function openLightbox(imgSrc) {
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+
+            function closeLightbox() {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            projectThumbs.forEach(function (thumb) {
+                thumb.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const imgSrc = thumb.getAttribute('data-project-img');
+                    if (imgSrc) openLightbox(imgSrc);
+                });
+            });
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) closeLightbox();
+            });
+            document.addEventListener('keydown', function (e) {
+                if (lightbox.classList.contains('active') && e.key === 'Escape') closeLightbox();
+            });
+        })();
+
         // ============ PWA: SERVICE WORKER REGISTRATION ============
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', function() {
@@ -3590,6 +4073,97 @@ statCounters.forEach(counter => counterObserver.observe(counter));
                 });
             });
         }
+
+        // ============ OPEN TO WORK RING: exact vertical centering of text in band ============
+        // Uses the ACTUAL rendered glyph metrics (via getBBox) so the text sits perfectly
+        // centered in the green band regardless of which font/browser actually loads.
+        function centerOpenToWorkText() {
+            var svg = document.querySelector('.opentowork-ring');
+            if (!svg) return;
+            var letters = svg.querySelectorAll('.otw-letters text');
+            if (!letters.length) return;
+
+            // Measure a representative capital letter's ink box relative to its own baseline (y=0)
+            var probe = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+            probe.setAttribute('x', '0');
+            probe.setAttribute('y', '0');
+            probe.textContent = 'O';
+            probe.style.visibility = 'hidden';
+            svg.appendChild(probe);
+            var box = probe.getBBox();
+            svg.removeChild(probe);
+
+            var visualCenterOffset = box.y + box.height / 2; // offset of ink-center from baseline
+            letters.forEach(function (t) {
+                t.setAttribute('dy', (-visualCenterOffset).toFixed(2));
+            });
+        }
+
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(centerOpenToWorkText);
+        } else {
+            window.addEventListener('load', centerOpenToWorkText);
+        }
+        // Re-run once more shortly after load in case the web font swaps in late
+        window.addEventListener('load', function () { setTimeout(centerOpenToWorkText, 300); });
+    </script>
+    <script>
+        // Auto-generate favicon from About section photo, cropped into a circle
+        (function () {
+            const aboutImg = document.getElementById('aboutPhoto');
+            if (!aboutImg) return;
+
+            function setFaviconFromImage(imgEl) {
+                const size = 64;
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+
+                // Circular clip
+                ctx.save();
+                ctx.beginPath();
+                ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.clip();
+
+                // Cover-fit the image into the circle
+                const iw = imgEl.naturalWidth;
+                const ih = imgEl.naturalHeight;
+                const scale = Math.max(size / iw, size / ih);
+                const dw = iw * scale;
+                const dh = ih * scale;
+                const dx = (size - dw) / 2;
+                const dy = (size - dh) / 2;
+                ctx.drawImage(imgEl, dx, dy, dw, dh);
+                ctx.restore();
+
+                const dataUrl = canvas.toDataURL('image/png');
+
+                let link = document.querySelector("link[rel~='icon']");
+                if (!link) {
+                    link = document.createElement('link');
+                    link.rel = 'icon';
+                    document.head.appendChild(link);
+                }
+                link.type = 'image/png';
+                link.href = dataUrl;
+
+                let appleLink = document.querySelector("link[rel='apple-touch-icon']");
+                if (!appleLink) {
+                    appleLink = document.createElement('link');
+                    appleLink.rel = 'apple-touch-icon';
+                    document.head.appendChild(appleLink);
+                }
+                appleLink.href = dataUrl;
+            }
+
+            if (aboutImg.complete && aboutImg.naturalWidth !== 0) {
+                setFaviconFromImage(aboutImg);
+            } else {
+                aboutImg.addEventListener('load', () => setFaviconFromImage(aboutImg));
+            }
+        })();
     </script>
 </body>
 </html>
