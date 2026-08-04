@@ -3417,8 +3417,7 @@ body.dark-mode .counter-label {
         <span class="cert-lightbox-counter" id="certLightboxCounter"></span>
     </div>
 
-    <!-- ============ PROJECT VIDEO LIGHTBOX ============ -->
-    <!-- Project Image Lightbox (Certificate Style) -->
+    <!-- ============ PROJECT IMAGE LIGHTBOX ============ -->
     <div class="project-lightbox" id="projectLightbox">
         <div class="project-lightbox-inner">
             <button class="project-lightbox-close" id="projectLightboxClose" aria-label="Close">
@@ -3832,14 +3831,14 @@ statCounters.forEach(counter => counterObserver.observe(counter));
                 { keys: ['how many projects', 'years of experience', 'how many certifications', 'rows handled', 'stats'], a: "In numbers: 20+ projects completed, 2+ years of experience, 50K+ Excel rows handled, and 10+ certifications." },
 
                 // ---- Contact / social ----
-                { keys: ['contact', 'email', 'reach', 'hire', 'connect', 'get in touch'], a: "You can reach Mohit at ojhamohit108@gmail.com, or connect via LinkedIn (linkedin.com/in/mohit-ojha-data-analyst) — links are in the Contact section." },
+                { keys: ['contact', 'email', 'reach', 'hire', 'connect', 'get in touch'], a: "You can reach Mohit at ojhamohit108@gmail.com, call/WhatsApp him at +91 7296052960, or connect via LinkedIn (linkedin.com/in/mohit-ojha-data-analyst) — links are in the Contact section." },
                 { keys: ['linkedin'], a: "Mohit's LinkedIn: linkedin.com/in/mohit-ojha-data-analyst" },
-                { keys: ['phone', 'mobile number', 'call'], a: "The best way to reach Mohit is by email (ojhamohit108@gmail.com) or LinkedIn — the phone number on the site is a placeholder." },
+                { keys: ['phone', 'mobile number', 'call'], a: "You can call or WhatsApp Mohit at +91 7296052960, or reach him by email at ojhamohit108@gmail.com." },
                 { keys: ['location', 'based', 'city', 'where', 'live', 'address'], a: "Mohit is based in Gurugram, Haryana, India." },
                 { keys: ['resume', 'cv', 'download'], a: "You can view/download Mohit's resume via the 'Download CV' button in the hero section, or 'View My Resume' in the Certifications section." },
 
                 // ---- Availability ----
-                { keys: ['open to work', 'available', 'looking for job', 'freelance', 'hiring', 'vacancy'], a: "Yes, Mohit is currently open to new Data Analyst / Business Analyst / MIS Analyst / MIS Executive opportunities, including freelance and contract-based projects, along with full-time roles. Feel free to reach out via email or LinkedIn." },
+                { keys: ['open to work', 'available', 'looking for job', 'freelance', 'hiring', 'vacancy'], a: "Yes, Mohit is currently open to new Data Analyst / Business Analyst / MIS Analyst / MIS Executive opportunities, including freelance and contract-based projects, along with full-time roles. Feel free to reach out via email, phone (+91 7296052960), or LinkedIn." },
                 { keys: ['remote', 'on-site', 'onsite', 'hybrid', 'relocate', 'relocation'], a: "Mohit is open to remote, hybrid, and on-site roles. He's currently based in Gurugram, Haryana and open to relocation." },
                 { keys: ['notice period', 'join', 'joining', 'immediate joiner'], a: "Mohit is an immediate joiner and can start right away." },
                 { keys: ['industry', 'industries', 'domain', 'sector'], a: "Through his personal and portfolio projects, Mohit has explored data across retail/e-commerce, HR, finance, and transportation domains — building dashboards and analysis that reflect real-world business scenarios." },
@@ -3850,7 +3849,7 @@ statCounters.forEach(counter => counterObserver.observe(counter));
                 // ---- Small talk ----
                 { keys: ['hi', 'hello', 'hey', 'namaste'], a: "Hey there! 👋 Ask me anything about Mohit's skills, experience, projects, education, or certifications." },
                 { keys: ['thank', 'thanks', 'thx'], a: "You're welcome! 😊 Let me know if you'd like to know anything else about Mohit." },
-                { keys: ['bye', 'goodbye', 'see you'], a: "Thanks for stopping by! Feel free to reach out to Mohit anytime at ojhamohit108@gmail.com. 👋" }
+                { keys: ['bye', 'goodbye', 'see you'], a: "Thanks for stopping by! Feel free to reach out to Mohit anytime at ojhamohit108@gmail.com or +91 7296052960. 👋" }
             ];
 
             function findAnswer(text) {
@@ -3867,7 +3866,7 @@ statCounters.forEach(counter => counterObserver.observe(counter));
                         bestEntry = entry;
                     }
                 }
-                return bestEntry ? bestEntry.a : "I'm not totally sure about that one — feel free to reach out directly at ojhamohit108@gmail.com and Mohit can answer personally!";
+                return bestEntry ? bestEntry.a : "I'm not totally sure about that one — feel free to reach out directly at ojhamohit108@gmail.com or +91 7296052960 and Mohit can answer personally!";
             }
 
             function addMessage(text, sender) {
