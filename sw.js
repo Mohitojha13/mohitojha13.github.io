@@ -2,7 +2,7 @@
 // The browser only re-installs the service worker when this file's bytes change,
 // so changing the version here forces old caches to be cleared (see 'activate' below)
 // and stops returning-visitors from getting stuck on stale cached content.
-const CACHE_VERSION = 'v7-2026-11-09';
+const CACHE_VERSION = 'v8-2026-11-14';
 const CACHE_NAME = 'mohit-portfolio-' + CACHE_VERSION;
 const OFFLINE_URLS = [
     '/',
